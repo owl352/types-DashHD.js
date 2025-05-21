@@ -1,4 +1,11 @@
 {
-  "name": "dashhd_typings",
-  "packageManager": "yarn@4.6.0"
+  "name": "@types/dashhd",
+  "packageManager": "yarn@4.6.0",
+  "version": "3.3.3",
+  "types": "index.d.ts",
+  "main": "",
+  "typeScriptVersion": "5.0",
+  "peerDependencies": {},
+  "license": "MIT",
+  "dependencies": {}
 }
