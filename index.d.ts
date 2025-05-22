@@ -108,7 +108,7 @@ declare namespace DashHD {
 
     const HARDENED_OFFSET: number
 
-    function create(opts: HDKeyOptions): HDKey
+    function create(opts?: HDKeyOptions): HDKey
     function toAddr(pubBytes: Uint8Array, opts?: { version: Versions | number }): Promise<string>
     function toWif (privBytes: Uint8Array, opts?: { version: Versions | number }): Promise<string>
     function toXPrv (hdkey: HDKey, opts?: { version: Versions | number }): Promise<string>
@@ -117,15 +117,15 @@ declare namespace DashHD {
     function toXPubBytes (hdkey: HDKey, opts?: { version: Versions | number }): Promise<Uint8Array>
     function deriveChild (hdkey: HDKey, index: number, hardened: boolean): Promise<HDKey>
     function derivePath (parent: HDKey, path: string): Promise<HDKey>
-    function fromSeed (seed: Uint8Array, opts: HDFromSeedOptions): Promise<HDWallet>
-    function fromXKey (xkey: string, opts: HDFromXKeyOptions): Promise<HDXKey>
+    function fromSeed (seed: Uint8Array, opts?: HDFromSeedOptions): Promise<HDWallet>
+    function fromXKey (xkey: string, opts?: HDFromXKeyOptions): Promise<HDXKey>
     function toId (hdkey: HDKey): Promise<string>
     function toIdBytes (hdkey: HDKey): Promise<Uint8Array>
     function toPublic (hdkey: HDKey): HDKey
     function wipePrivateData (hdkey: HDKey): Promise<HDKey>
 
 
-    function decode (base58key: string, opts: {versions: [string, string], xversions: [string, string]}): Promise<Parts>
+    function decode (base58key: string, opts?: {versions: [string, string], xversions: [string, string]}): Promise<Parts>
     function encodeXPrv (keyBytes: Uint8Array, opts?: { version: Versions | number }): Promise<string>
     function encodeXPub (keyBytes: Uint8Array, opts?: { version: Versions | number }): Promise<string>
     function privateKeyTweakAdd (privateKeyBytes: Uint8Array, tweakBytes: Uint8Array): Promise<Uint8Array>
