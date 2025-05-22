@@ -39,15 +39,15 @@ declare namespace DashHD {
     type HDAccount = HDKey & HDAccountPartial
 
     type HDFromXKeyOptions = {
-        versions: HDVersionsOption,
-        bip32: boolean,
-        normalizePublicKey: boolean
+        versions?: HDVersionsOption,
+        bip32?: boolean,
+        normalizePublicKey?: boolean
     }
 
     type HDFromSeedOptions = {
-        purpose: number,
-        coinType: number,
-        versions: Versions,
+        purpose?: number,
+        coinType?: number,
+        versions?: Versions,
     }
 
     type HDVersionsOption = {
