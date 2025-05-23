@@ -132,46 +132,18 @@ declare namespace DashHD {
     function wipePrivateData(hdkey: HDKey): Promise<HDKey>
 
 
-    function decode(base58key: string, opts?: {
-        versions: [string, string],
-        xversions: [string, string]
-    }): Promise<Parts>
-
-    function encodeXPrv(keyBytes: Uint8Array, opts?: { version: Versions | number }): Promise<string>
-
-    function encodeXPub(keyBytes: Uint8Array, opts?: { version: Versions | number }): Promise<string>
-
-    function privateKeyTweakAdd(privateKeyBytes: Uint8Array, tweakBytes: Uint8Array): Promise<Uint8Array>
-
-    function publicKeyNormalize(pubBytes: Uint8Array): Promise<Uint8Array>
-
-    function publicKeyTweakAdd(publicKeyBytes: Uint8Array, tweakBytes: Uint8Array): Promise<Uint8Array>
-
-    function ripemd160sum(bytes: Uint8Array): Promise<Uint8Array>
-
-    function sha256sum(bytes: Uint8Array): Promise<Uint8Array>
-
-    function sha512hmac(entropy: Uint8Array, data: Uint8Array): Promise<Uint8Array>
-
-    function bytesToBase64Url(bytes: Uint8Array): string
-
-    function secureErase(buf: Uint8Array): void
-
-    function toPublicKey(privBytes: Uint8Array): Promise<Uint8Array>
-
-    interface Utils {
-        decode: typeof decode,
-        encodeXPrv: typeof encodeXPrv,
-        encodeXPub: typeof encodeXPub,
-        privateKeyTweakAdd: typeof privateKeyTweakAdd,
-        publicKeyNormalize: typeof publicKeyNormalize,
-        publicKeyTweakAdd: typeof publicKeyTweakAdd,
-        ripemd160sum: typeof ripemd160sum,
-        sha256sum: typeof sha256sum,
-        sha512hmac: typeof sha512hmac,
-        bytesToBase64Url: typeof bytesToBase64Url,
-        secureErase: typeof secureErase,
-        toPublicKey: typeof toPublicKey,
+    export interface Utils {
+        encodeXPrv(keyBytes: Uint8Array, opts?: { version: Versions | number }): Promise<string>
+        encodeXPub(keyBytes: Uint8Array, opts?: { version: Versions | number }): Promise<string>
+        privateKeyTweakAdd(privateKeyBytes: Uint8Array, tweakBytes: Uint8Array): Promise<Uint8Array>
+        publicKeyNormalize(pubBytes: Uint8Array): Promise<Uint8Array>
+        publicKeyTweakAdd(publicKeyBytes: Uint8Array, tweakBytes: Uint8Array): Promise<Uint8Array>
+        ripemd160sum(bytes: Uint8Array): Promise<Uint8Array>
+        sha256sum(bytes: Uint8Array): Promise<Uint8Array>
+        sha512hmac(entropy: Uint8Array, data: Uint8Array): Promise<Uint8Array>
+        bytesToBase64Url(bytes: Uint8Array): string
+        secureErase(buf: Uint8Array): void
+        toPublicKey(privBytes: Uint8Array): Promise<Uint8Array>
     }
 
     const _utils: Utils
